@@ -1,0 +1,42 @@
+body{
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.heading{
+	text-align: center;
+	font-size: 28px;
+	border-bottom: 3px solid #000;
+}
+
+#ansTimer{
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.answer{
+	font-size: 20px;
+	margin: 10px;
+	padding: 10px;
+	background-color: #000;
+	color: #fff;
+}
+
+.answer:hover{
+	background-color: #fff;
+	color: #000;
+	cursor: pointer;
+}
+
+.main{
+	text-align: center;
+	font-weight: bold;
+}
+
+#Question{
+	font-size: 34px;
+}
+
