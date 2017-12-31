@@ -1,6 +1,6 @@
 let i = 0;
 let rightAns = 0;
-let wrongns = 0;
+let wrongAns = 0;
 
 const Questions = [
     {
@@ -50,6 +50,7 @@ function timer() {
     intervalId = setInterval(decrement, 1000);
     if(number == 0) {
     	number = 16;
+        wrongAns++;
     }
 }
 function decrement() {
@@ -66,9 +67,16 @@ function stop(){
     clearInterval(intervalId);
 }
 
+stop();
 timer();
 
 function nextQuestion() {
+   if (i < Questions.length) {
+   
+    console.log(i);
+    console.log(Questions.length);
+    showResults();
+
 	$('#Question').html(Questions[i].question);
 
     for(let j = 0; j < 4; j++){
@@ -83,35 +91,47 @@ function nextQuestion() {
     $('.answer').click(function(){
         let chosenAnswer = ($(this).attr('data-id')); //getting the attribute
         let correctAnswer = Questions[i].correct;
+        number = 16;
 
         console.log(chosenAnswer);
         console.log(correctAnswer);
 
         if(chosenAnswer === correctAnswer){
             rightAns++;
+            nextQuestion();
+            showResults();
+            i++;
         }else{
-            wrongns++;
+            wrongAns++;
+            nextQuestion();
+            showResults();
+            i++;
         }
 
         console.log("rightAns", rightAns);
-        console.log("wrongns", wrongns);
-
-        //chosenAnswer == correct answer
-        //correct++
-        //else
-        //wrong++
+        console.log("wrongAns", wrongAns);
 
         //stop timer, call next question again
         stop();
+        timer();
 
     });
 
-    i++;
+   }
+   else 
+    {return;}
 }
+
+
 
 function showResults(){
     //correct and wrong answers
-
+    if (i == Questions.length) {
+    $('#Question').html("Right Answers: " + rightAns);
+    $('#Question').append('<br>');
+    $('#Question').append("Wrong Answers: " + wrongAns);
+    stop();
+    }
     //start game again
 }
 
