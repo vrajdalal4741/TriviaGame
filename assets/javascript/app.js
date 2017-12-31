@@ -10,7 +10,7 @@ const Questions = [
             'Michael Richards (Cosmo Kramer)',
             'George Steinbrenner (Larry David)'
             ],
-        correct : 1,   
+        correct : 4,   
     },
     {
         question:'How many times have the Minneosta Vikings won the SuperBowl?',
@@ -19,7 +19,7 @@ const Questions = [
                 'Two',
                 'Zero'
                 ],
-        correct : 3         
+        correct : 4         
     },
     {
         question: 'Bruce Lee was the founder of which style of Martial Arts?',
@@ -28,7 +28,7 @@ const Questions = [
         'Krav Maga',
         'Jeet Kune Do'
         ],
-        correct : 2  
+        correct : 4  
     },
     {
         question: 'In 2017, who did Food Beast rank as the best fried chicken chain in the U.S.?',
@@ -36,7 +36,7 @@ const Questions = [
         'Chick-Fil-A',
         'Raising Canes',
         'Popeye\'s'],
-        correct : 1  
+        correct : 4  
     }
 ]
 
